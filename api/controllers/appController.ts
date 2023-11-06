@@ -7,13 +7,12 @@ export const index = (req: any, res: any) => {
 export class AppController {
 
     public async index(req: any, res: any) {
-        // this.defaultHeader(res);
-        const store = await Store
-        .select('a.*, b.* ')
-        .joins('LEFT JOIN schedules b ON a.id = b.store_id')
-        .get();
-        console.log(Store.create(''));
-        return res.json(store);
+        // const store = await Store
+        // .select('a.*, b.* ')
+        // .joins('LEFT JOIN schedules b ON a.id = b.store_id')
+        // .get();
+        // console.log(Store.create(''));
+        // return res.json(store);
     }
 
     private defaultHeader(res: any) {

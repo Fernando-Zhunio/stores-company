@@ -1,7 +1,7 @@
 // const express = require('express');
 import express from 'express';
 import {routes} from './api/routes/routes';
-import { ConnectionDB } from './connection';
+import { ConnectionDB } from './config/connection';
 const hostname = '127.0.0.1';
 const port = 3000;
 const app = express();
