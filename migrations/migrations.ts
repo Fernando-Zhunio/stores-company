@@ -11,7 +11,7 @@ export function createTable(connection: any) {
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         );
 
-        INSERT INTO stores (name, address, latitude, longitude, company, schedules) VALUES ('Test Store', 'Test Address', 'Test Latitude', 'Test Longitude', 'Test Company', );
+        INSERT INTO stores (name, address, latitude, longitude, company, schedules) VALUES ('Test Store', 'Test Address', 'Test Latitude', 'Test Longitude', 'Test Company', '${JSON.stringify(generateSchedule())}');
     `;
     connection.exec(sql, (err: any) => {
         if (err) throw err;
@@ -19,5 +19,41 @@ export function createTable(connection: any) {
 }
 
 function generateSchedule() {
-    
+    return   {
+            "monday": {
+              "status": true,
+              "start": "08:30",
+              "end": "18:00"
+            },
+            "tuesday": {
+              "status": true,
+              "start": "08:30",
+              "end": "18:00"
+            },
+            "wednesday": {
+              "status": true,
+              "start": "08:30",
+              "end": "18:00"
+            },
+            "thursday": {
+              "status": true,
+              "start": "08:30",
+              "end": "18:00"
+            },
+            "friday": {
+              "status": true,
+              "start": "08:30",
+              "end": "18:00"
+            },
+            "saturday": {
+              "status": true,
+              "start": "08:30",
+              "end": "18:00"
+            },
+            "sunday": {
+              "status": false,
+              "start": "08:30",
+              "end": "18:00"
+            }
+    }
 }
